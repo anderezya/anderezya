@@ -1,12 +1,16 @@
+@import-url(https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap)
+
 * {
   box-sizing: border-box;
   margin: 0;
+  padding: 0;
 }
 
 body,
 html {
-  font-family: montserrat;
-  min-width: 636px;
+  font-family: Montserrt, sans-serif;
+  min-width: 650px;
+  margin: 0;
   min-height: 100vh;
   /*background: repeating-linear-gradient(45deg, 
     #fff700,
@@ -24,6 +28,7 @@ html {
   gap: 10px;
   flex-wrap: wrap;
   min-width: 100%;
+  max-width: 100%;
   top: 0;
   position: sticky;
   background-color: rgba(0, 0, 0, 0.25);
@@ -33,18 +38,16 @@ html {
   right: 0;
 }
 
-
 .card {
   border-radius: 3px;
   align-content: start;
   text-align: left;
-  max-width: 600px;
-  min-width: 600px;
+  max-width: 500px;
+  min-width: 500px;
   max-height: 207.5px;
   min-height: 207.5px;
   background-color: #303030;
   font-size: 60%;
-  box-shadow: 5px 5px 1px rgba(0, 0, 0, 0.5);
   gap: 0;
   display: flex !important;
   top: 0;
@@ -56,9 +59,10 @@ html {
 }
 
 .card section {
-flex-wrap: wrap;
+  flex-wrap: wrap;
   text-wrap: wrap;
   width: 100%;
+  padding: 8px;
 }
 
 .card header {
@@ -69,25 +73,20 @@ flex-wrap: wrap;
 }
 
 .card header h4 {
-font-size: 15px;
+  font-size: 15px;
 }
 
 .card p {
- font-size: 15px;
+  font-size: 15px;
   padding: 5px;
   font-weight: 600;
-}
-
-.card section {
-padding: 8px;
 }
 
 .card img {
   width: 207.5px;
   height: 100%;
-  border-radius:;
+  border-radius: ;
 }
-
 
 .header a h1 {
   font-size: 20px;
@@ -98,15 +97,13 @@ padding: 8px;
   width: 1px;
 }
 
-
 .fcc-standard {
-  position: static;
-  flex-direction: row;
   margin: 0 auto;
   overflow-y: scroll;
-  padding: 50px;
-  min-width: 636px;
+  padding: 50px 50px 100px 50px;
+  min-width: 100%;
   min-height: 100vh;
+  position: fixed;
 }
 
 .fcc-index {
@@ -115,6 +112,7 @@ padding: 8px;
   flex-direction: row;
   justify-content: center;
   align-items: center;
+  overflow-y: scroll;
 }
 
 .fcc-informasi {
@@ -125,12 +123,12 @@ padding: 8px;
 }
 
 .fcc-proyek {
-  display: grid;
-  justify-content: center;
-  align-items: center;
-  align-content: center;
-  gap: 15px 15px;
+  display: flex;
+  flex-direction: row;
   flex-wrap: wrap;
+  justify-content: center;
+  align-content: center;
+  gap: 20px;
 }
 
 .nowrap {
@@ -141,16 +139,13 @@ padding: 8px;
   color: #303030;
 }
 
-
 .currentpage {
-background-color: #669bbc;
+  background-color: #669bbc;
   border-radius: 2px;
 }
 
-
 p a:hover {
   color: #ffffff;
-  
 }
 
 .content h1,
@@ -168,7 +163,6 @@ nav a {
   border-radius: 2px;
 }
 
-
 nav {
   gap: 14px;
   display: flex;
@@ -177,9 +171,9 @@ nav {
   max-height: 29px;
   flex-wrap: wrap;
 }
- 
+
 .contact {
-background-color: #669bbc;
+  background-color: #669bbc;
   border-radius: 2px;
   text-decoration: none;
   color: #ffffff;
@@ -187,15 +181,15 @@ background-color: #669bbc;
 }
 
 .index-main {
-padding: 80px;
+  padding: 50px;
   font-size: 120%;
   color: #ffffff;
   text-wrap: wrap;
 }
 
 .index-main p {
-padding: 15px 0 20px 0;
-  width: 50%;
+  padding: 15px 0 20px 0;
+  width: 80%;
 }
 
 .stripe {
@@ -262,14 +256,13 @@ padding: 15px 0 20px 0;
   text-decoration: none;
 }
 
-
 .footer {
   margin: 0;
   padding: 10px;
   justify-content: space-between;
   align-content: end;
   color: rgba(255, 255, 255, 0.1);
-  position: sticky;
+  position: fixed;
   min-width: 100%;
   display: inline-flex;
   bottom: 0;
@@ -283,9 +276,8 @@ nav a:hover {
   border-radius: 2px;
   background-color: #669bbc;
   border-radius: 2px;
-transform: scale(1.1);
+  transform: scale(1.1);
 }
-
 
 .img2 {
   min-width: 150px;
@@ -295,5 +287,9 @@ transform: scale(1.1);
 }
 
 li {
-list-style-type: none
+  list-style-type: none;
+}
+
+.card:hover {
+  transform: scale(1.05);
 }
