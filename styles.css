@@ -1,9 +1,9 @@
-@import-url(https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap)
 
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+  text-decoration: none;
 }
 
 body,
@@ -11,6 +11,7 @@ html {
   font-family: Montserrt, sans-serif;
   min-width: 650px;
   margin: 0;
+  padding: 0;
   min-height: 100vh;
   /*background: repeating-linear-gradient(45deg, 
     #fff700,
@@ -28,28 +29,26 @@ html {
   gap: 10px;
   flex-wrap: wrap;
   min-width: 100%;
-  max-width: 100%;
   top: 0;
   position: sticky;
   background-color: rgba(0, 0, 0, 0.25);
   justify-content: space-between;
-  display: inline-flex;
+  display: flex;
   left: 0;
   right: 0;
 }
 
 .card {
   border-radius: 3px;
-  align-content: start;
+  justify-content: center;
   text-align: left;
   max-width: 500px;
   min-width: 500px;
   max-height: 207.5px;
   min-height: 207.5px;
   background-color: #303030;
-  font-size: 60%;
   gap: 0;
-  display: flex !important;
+  display: flex;
   top: 0;
   bottom: 0;
   margin: 0;
@@ -59,21 +58,25 @@ html {
 }
 
 .card section {
+   align-content: start;
+  display: flex;
   flex-wrap: wrap;
   text-wrap: wrap;
   width: 100%;
+  margin: 0;
   padding: 8px;
 }
 
-.card header {
+.card header{
   width: 100%;
   font-size: 25px;
+  margin-top: 0;
   padding: 5px;
   border-bottom: solid 2px white;
 }
 
 .card header h4 {
-  font-size: 15px;
+  font-size: 12.5px;
 }
 
 .card p {
@@ -98,11 +101,11 @@ html {
 }
 
 .fcc-standard {
-  margin: 0 auto;
+  margin: 0;
   overflow-y: scroll;
-  padding: 50px 50px 100px 50px;
+  padding: 50px 50px 120px 50px;
   min-width: 100%;
-  min-height: 100vh;
+  min-height: 100%;
   position: fixed;
 }
 
@@ -146,13 +149,6 @@ html {
 
 p a:hover {
   color: #ffffff;
-}
-
-.content h1,
-.content a,
-.content p {
-  width: 100%;
-  padding: 3px;
 }
 
 nav a {
