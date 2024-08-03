@@ -203,6 +203,12 @@ align-content: start;
   text-decoration: none;
   color: #ffffff;
   padding: 5px;
+  display: inline-block;
+  font-size: 25px;
+}
+
+h1 a:hover {
+transform: scale(1.1);
 }
 
 .index-main {
