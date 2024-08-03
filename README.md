@@ -1,1 +1,1 @@
-bersihkan css
+Didesain dan dibuat oleh Alexandex alias Anderezya

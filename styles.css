@@ -1,4 +1,3 @@
-
 * {
   box-sizing: border-box;
   margin: 0;
@@ -23,6 +22,7 @@ html {
 }
 
 .header {
+  z-index: 100;
   color: #ffffff;
   font-weight: bold;
   padding: 15px 50px 15px 50px;
@@ -38,117 +38,9 @@ html {
   right: 0;
 }
 
-.card {
-  border-radius: 3px;
-  justify-content: center;
-  text-align: left;
-  max-width: 500px;
-  min-width: 500px;
-  max-height: 207.5px;
-  min-height: 207.5px;
-  background-color: #303030;
-  gap: 0;
-  display: flex;
-  top: 0;
-  bottom: 0;
-  margin: 0;
-  color: #ffffff;
-  overflow-y: scroll;
-  overflow-x: hidden;
-}
-
-.card section {
-   align-content: start;
-  display: flex;
-  flex-wrap: wrap;
-  text-wrap: wrap;
-  width: 100%;
-  margin: 0;
-  padding: 8px;
-}
-
-.card header{
-  width: 100%;
-  font-size: 25px;
-  margin-top: 0;
-  padding: 5px;
-  border-bottom: solid 2px white;
-}
-
-.card header h4 {
-  font-size: 12.5px;
-}
-
-.card p {
-  font-size: 15px;
-  padding: 5px;
-  font-weight: 600;
-}
-
-.card img {
-  width: 207.5px;
-  height: 100%;
-  border-radius: ;
-}
-
-.header a h1 {
-  font-size: 20px;
-  color: #ffffff;
-}
-
-::-webkit-scrollbar {
-  width: 1px;
-}
-
-.fcc-standard {
-  margin: 0;
-  overflow-y: scroll;
-  padding: 50px 50px 120px 50px;
-  min-width: 100%;
-  min-height: 100%;
-  position: fixed;
-}
-
-.fcc-index {
-  display: flex;
-  text-align: left;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  overflow-y: scroll;
-}
-
-.fcc-informasi {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 10px 10px;
-}
-
-.fcc-proyek {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-content: center;
-  gap: 20px;
-}
-
-.nowrap {
-  white-space: nowrap;
-}
-
-.hidden {
-  color: #303030;
-}
-
 .currentpage {
   background-color: #669bbc;
   border-radius: 2px;
-}
-
-p a:hover {
-  color: #ffffff;
 }
 
 nav a {
@@ -166,6 +58,143 @@ nav {
   align-items: center;
   max-height: 29px;
   flex-wrap: wrap;
+}
+
+nav a:hover {
+  border-radius: 2px;
+  background-color: #669bbc;
+  border-radius: 2px;
+  transform: scale(1.1);
+}
+
+.fcc-standard {
+  margin: 0;
+  
+  padding: 50px 50px 120px 50px;
+  min-width: 100%;
+  min-height: calc(100vh - 60px);
+ align-items: center;
+  justify-items: center;
+  justify-content: center;
+  align-content: center;
+}
+
+.fcc-index {
+  display: flex;
+  text-align: left;
+  flex-direction: row;
+  gap: 10px;
+}
+
+.fcc-informasi {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.fcc-proyek {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 18px;
+}
+
+.footer {
+  margin: 0;
+  padding: 10px;
+  justify-content: space-between;
+  align-content: end;
+  color: rgba(255, 255, 255, 0.5);
+  position: fixed;
+  min-width: 100%;
+  display: inline-flex;
+  bottom: 0;
+  margin-top: 10px;
+  left: 0;
+  right: 0;
+  text-wrap: wrap;
+}
+
+.card {
+  border-radius: 3px;
+  justify-content: center;
+  text-align: left;
+  max-width: 500px;
+  min-width: 500px;
+  max-height: 225px;
+  min-height: 225px;
+  background-color: #303030;
+  gap: 0;
+  display: flex;
+  top: 0;
+  bottom: 0;
+  margin: 0;
+  color: #ffffff;
+  overflow-y: hidden;
+  overflow-x: hidden;
+  border-bottom: solid 5px #669bbc;
+}
+
+.card .img-content {
+align-content: start;
+  display: flex;
+  flex-wrap: wrap;
+  width: auto;
+  margin: 0;
+}
+
+.card .text-content  {
+  align-content: start;
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  margin: 0;
+  padding: 10px;
+}
+
+.card header {
+  padding: 10px;
+  width: 100%;
+  max-height: 35%;
+  font-size: 25px;
+  margin-top: 0;
+ 
+}
+
+.card header h4 {
+  font-size: 10.5px;
+}
+
+.card p {
+  display: flex;
+  color: #808080;
+  flex-grow: 1;
+  width: 100%;
+  height: calc(100% - 75.63px);
+  text-wrap: wrap;
+  font-size: 15px;
+  padding: 0px 10px 10px 10px;
+  font-weight: 600;
+  overflow-y: scroll;
+}
+
+
+.card img {
+  width: 225px;
+  height: 225px;
+  border-radius: 2px;
+}
+
+.card:hover {
+  transform: scale(1.05);
+}
+
+::-webkit-scrollbar {
+  width: 1px;
+}
+
+.nowrap {
+  white-space: nowrap;
 }
 
 .contact {
@@ -232,6 +261,11 @@ nav {
   display: flex;
 }
 
+
+.copyright {
+justify-self: center;
+  align-self: end;
+}
 .bold {
   font-weight: bold;
 }
@@ -244,38 +278,11 @@ nav {
   border: solid 1px #ffffff;
 }
 
-.textwrap {
-  text-wrap: wrap;
-}
-
 .notextdeco {
   text-decoration: none;
 }
 
-.footer {
-  margin: 0;
-  padding: 10px;
-  justify-content: space-between;
-  align-content: end;
-  color: rgba(255, 255, 255, 0.1);
-  position: fixed;
-  min-width: 100%;
-  display: inline-flex;
-  bottom: 0;
-  margin-top: 10px;
-  left: 0;
-  right: 0;
-  text-wrap: wrap;
-}
-
-nav a:hover {
-  border-radius: 2px;
-  background-color: #669bbc;
-  border-radius: 2px;
-  transform: scale(1.1);
-}
-
-.img2 {
+.anderezya {
   min-width: 150px;
   max-width: 150px;
   min-height: 30px;
@@ -286,6 +293,4 @@ li {
   list-style-type: none;
 }
 
-.card:hover {
-  transform: scale(1.05);
-}
+
