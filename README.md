@@ -1,1 +1,1 @@
-Didesain dan dibuat oleh Alexandex alias Anderezya
+Didesain dan dikembangkan oleh Alexandex (Alias Anderezya)
