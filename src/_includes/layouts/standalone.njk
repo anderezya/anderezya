@@ -1,0 +1,24 @@
+---
+
+layout: layouts/index.njk
+
+---
+
+<section data-pagefind-body class="content postingan page">
+<header style="display: none;" class="postingan__header">
+    <div class="container__header">
+      <h1 data-pagefind-meta="title">{{title}}</h1>
+      <h2 style="color: var(--ui-sfc)">{{description}}</h2>
+     </div>
+     <div class="postingan__date">
+      <span data-pagefind-ignore class="material-symbols-rounded">edit_calendar</span><h1>{{ page.date | htmlDateString }}</h1>
+     </div>
+   </header>
+  <article>
+ <div style="grid-area: ct; flex-direction: column;" class="postingan flex">
+   <div class="postingan__p">
+      {{ content | safe }}
+   </div>
+    </div>
+  </article>
+</section>

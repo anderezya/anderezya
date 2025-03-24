@@ -1,0 +1,6 @@
+[submodule]
+	recurse = true
+	update = remote
+[user]
+	email = 158167786+anderezya@users.noreply.github.com
+	name = Alexander
