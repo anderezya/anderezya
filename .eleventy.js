@@ -21,7 +21,7 @@ eleventyConfig.on('eleventy.after', () => {
   return {
     dir: {
       input: "src",
-      output: "build",
+      output: "_site",
     },
   };
 };
