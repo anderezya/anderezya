@@ -1,0 +1,55 @@
+---
+layout: layouts/index.njk
+title: Postingan
+quote: "'Ideas can be killed.' 'How?' 'With better ideas.'"
+
+---
+
+<div style="padding: var(--ui-padding)">
+  <section style="min-width: unset; width: unset; margin: var(--ui-padding);" class="page primary-container">
+    <header class="container__header">
+                    <h1>Artikel</h1>
+                    <h2>Lengkap</h2>
+                  </header>
+    <ul class="secondary-container--postingan" >
+ {%- for post in collections.artikel | reverse -%}   
+        <li class="secondary-container--styled" {% if page.url == post.url %} aria-current="page" {% endif %} >
+          <article>
+          <a href="{{ post.url }}">
+          <header class="container__header">
+            <h3>{{ post.data.title }}</h3>
+            <h4>{{ post.data.page.date | htmlDateString }}</h4>
+          </header>
+          <section>
+            <p class="container__p flex"> {{ post.data.description }}</p>
+          </section>
+             </a>
+          </article>
+        </li>
+       {%- endfor -%}
+   </ul>
+</section>
+<section style="min-width: unset; width: unset; margin: var(--ui-padding);" class="page primary-container">
+    <header class="container__header">
+                    <h1>Postingan</h1>
+                    <h2>Lengkap</h2>
+                  </header>
+    <ul class="secondary-container--postingan" >
+ {%- for post in collections.postingan | reverse -%}   
+        <li class="secondary-container--styled" {% if page.url == post.url %} aria-current="page" {% endif %} >
+          <article>
+          <a href="{{ post.url }}">
+          <header class="container__header">
+            <h3>{{ post.data.title }}</h3>
+            <h4>{{ post.data.page.date | htmlDateString }}</h4>
+          </header>
+          <section>
+            <p class="container__p flex"> {{ post.data.description }}</p>
+          </section>
+             </a>
+          </article>
+        </li>
+       {%- endfor -%}
+   </ul>
+</section>
+</div>

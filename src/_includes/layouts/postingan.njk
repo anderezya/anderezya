@@ -1,0 +1,41 @@
+---
+
+layout: layouts/index.njk
+
+---
+
+<section data-pagefind-body class="content postingan page">
+<header style="display: none;" class="postingan__header">
+    <div class="container__header">
+      <h1 data-pagefind-meta="title">{{title}}</h1>
+      <h2 style="color: var(--ui-sfc)">{{description}}</h2>
+     </div>
+     <div class="postingan__date">
+      <span data-pagefind-ignore class="material-symbols-rounded">edit_calendar</span><h1>{{ page.date | htmlDateString }}</h1>
+     </div>
+   </header>
+  <article>
+ <div style="grid-area: ct; flex-direction: column;" class="postingan flex">
+   <div class="postingan__p">
+      {{ content | safe }}
+   </div>
+    </div>
+  </article>
+{% set previousPost = collections.postingan | getPreviousCollectionItem %}
+{% set nextPost = collections.postingan | getNextCollectionItem %}
+<div class="postingan__nav">
+<header style="overflow: hidden; display: flex; flex-direction: column; border-radius: var(--ui-radius); margin-bottom: var(--ui-padding)" class="postingan__header">
+    <div class="container__header">
+      <h2 data-pagefind-meta="title">{{title}}</h2>
+      <h3 style="color: var(--ui-sfc)">{{description}}</h3>
+     </div>
+     <div class="postingan__date">
+      <span data-pagefind-ignore class="material-symbols-rounded">edit_calendar</span><h3>{{ page.date | htmlDateString }}</h3>
+     </div>
+   </header>
+<div class="primary-container--post-nav">
+{% if previousPost %}<h3 class="secondary-container--post-nav flex">Postingan  Sebelumnya <a style="font-size: 1.5rem" class="tertiary-container container--style" href="{{ previousPost.url }}">{{ previousPost.data.title }}</a></h3>{% endif %}
+{% if nextPost %}<h3 class="secondary-container--post-nav__right flex">Postingan Selanjutnya <a style="font-size: 1.5rem" class="tertiary-container container--style" href="{{ nextPost.url }}">{{ nextPost.data.title }}</a></h3>{% endif %}
+</div>
+  </div>
+</section>

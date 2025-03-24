@@ -1,0 +1,3 @@
+[submodule "content"]
+	path = src/content
+	url = git@github.com:anderezya/content.git

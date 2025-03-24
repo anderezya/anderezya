@@ -1,0 +1,11 @@
+.env
+.glitchdotcom.json
+node_modules
+web_modules
+build
+.git/
+.gitmodules.lock
+.gitconfig
+!.gitconfig
+.ssh
+.ssh/
