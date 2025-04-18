@@ -1,15 +1,13 @@
 ---
-
 layout: layouts/index.njk
 title: Beranda
 quote: No, this is not your first day.
-
 ---
 
 <div class="secondary-container">
 <div class="primary-container">
 <h1 style="border-bottom: unset;" class="container__header">
-  Writing build/index.html from ./src/index.njk
+Beranda
 </h1>
 </div>
 </div>
@@ -22,7 +20,7 @@ quote: No, this is not your first day.
 Pengembang Web Amatir dan Pengamat Teknologi Informasi di waktu luang.
   
 </div>
-<img style="max-width: 200px; width: 100%; aspect-ratio: 1/1;" src="./external/asset/Anderezya_November.svg">
+<img alt="Anderezya Logo" style="max-width: 200px; width: 100%; aspect-ratio: 1/1;" src="./external/asset/Anderezya_November.svg">
 </div>
 <div class="separator"></div>
 
@@ -30,7 +28,7 @@ Pengembang Web Amatir dan Pengamat Teknologi Informasi di waktu luang.
 
 Pedoman, Tutorial, dan Topik Menarik
 
-  <li style="flex: 1; grid-area: primary-container3">
+  <div style="flex: 1; grid-area: primary-container3">
   <article class="primary-container">
     <section style="justify-content: space-between;" class="secondary-container--nogap">
      <ul class="secondary-container--postingan" >
@@ -51,7 +49,7 @@ Pedoman, Tutorial, dan Topik Menarik
       </section>
     </article>
 </li>
-</li>
+</div>
 
 <div class="separator"></div>
 
@@ -59,7 +57,7 @@ Pedoman, Tutorial, dan Topik Menarik
 
 Perkembangan Pribadi
 
-<li style="flex: 1; grid-area: primary-container4">
+<div style="flex: 1; grid-area: primary-container4">
 <article class="primary-container">
     <section style="justify-content: space-between;" class="secondary-container--nogap">
     <ul style="flex: unset; flex-direction: column-reverse;" class="limit secondary-container" >
@@ -79,6 +77,6 @@ Perkembangan Pribadi
        <p class="click container__p"><a href="/postingan">Lihat Semua Postingan</a></p>
       </section>
     </article>
-</li>
+</div>
 
 </div>
