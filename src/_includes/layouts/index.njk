@@ -4,6 +4,7 @@
     <link href="https://unpkg.com/prismjs@1.20.0/themes/prism-okaidia.css" rel="stylesheet" />
     <link href="/pagefind/pagefind-ui.css" rel="stylesheet" />
     <link href="/external/styles.css" rel="stylesheet" />
+    <meta name="description" content="{{ description }}">
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Anderezya | {{title}}</title>
@@ -12,15 +13,15 @@
     <link
       href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Overpass:ital,wght@0,100..900;1,100..900&display=swap"
       rel="stylesheet"
-    />
+/>
     <link href="https://fonts.googleapis.com/css2?family=Overpass+Mono:wght@300..700&display=swap" rel="stylesheet">
     <link
       href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded"
       rel="stylesheet"
     />
     <link href="https://fonts.googleapis.com/css2?family=Titillium+Web:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Overpass:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Noto+Color+Emoji&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Overpass+Mono:wght@300..700&display=swap" rel="stylesheet">
     <link
       rel="icon"
       href="/external/asset/Anderezya_November.svg"
@@ -33,7 +34,7 @@
     </style>
   </head>
   <body>
-    <div class="sidebar--wrapper" style="grid-area: sb;">
+    <div data-pagefind-ignore class="sidebar--wrapper" style="grid-area: sb;">
       <div class="sidebar">
         <div class="logo--sidebar">
 <img src="/external/asset/Anderezya_Foxtrot.svg" alt="Anderezya Wordmark" class="wordmark">
@@ -99,12 +100,19 @@
           <nav>
           <a class="tertiary-container" href="/">Beranda</a>
           <a class="tertiary-container" href="/konten">Konten</a>
-          <a class="tertiary-container--nostyle desktop" href="/content/postingan/ts">Tentang Saya</a>
+          <a class="tertiary-container" href="/content/postingan/ts">Tentang Saya</a>
           </nav>
           </div>
       </div>
         </div>
     </header>
+    <div class="secondary-container">
+<div class="primary-container">
+<h1 style="border-bottom: unset;" class="container__header">
+{{ page.filePathStem }}
+</h1>
+</div>
+</div>
     {{ content | safe }}
       <footer style="grid-area: ft" class=" footer--desktop footer">
         <div style=" justify-content: center" class="footer__content">

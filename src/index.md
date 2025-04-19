@@ -1,16 +1,12 @@
 ---
+
 layout: layouts/index.njk
 title: Beranda
+description: Halaman Utama
 quote: No, this is not your first day.
+
 ---
 
-<div class="secondary-container">
-<div class="primary-container">
-<h1 style="border-bottom: unset;" class="container__header">
-Beranda
-</h1>
-</div>
-</div>
 <div class="content home section-informasi__ul">
 <div class="index__header ">
 <div style="padding: unset;" class="postingan__p">
@@ -55,7 +51,7 @@ Pedoman, Tutorial, dan Topik Menarik
 
 # Postingan
 
-Perkembangan Pribadi
+Perkembangan, Rongsokan, dan Hal pribadi lainnya
 
 <div style="flex: 1; grid-area: primary-container4">
 <article class="primary-container">
