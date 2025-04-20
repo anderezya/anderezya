@@ -23,6 +23,8 @@ layout: layouts/index.njk
   </article>
 {% set previousPost = collections.postingan | getPreviousCollectionItem %}
 {% set nextPost = collections.postingan | getNextCollectionItem %}
+{% set previousPost = collections.artikel | getPreviousCollectionItem %}
+{% set nextPost = collections.artikel | getNextCollectionItem %}
 <div class="postingan__nav">
 <header style="overflow: hidden; display: flex; flex-direction: column; border-radius: var(--ui-radius); margin-bottom: var(--ui-padding)" class="postingan__header">
     <div class="container__header">
@@ -34,8 +36,9 @@ layout: layouts/index.njk
      </div>
    </header>
 <div class="primary-container--post-nav">
-{% if previousPost %}<h3 class="secondary-container--post-nav flex">Postingan  Sebelumnya <a style="font-size: 1.5rem" class="tertiary-container container--style" href="{{ previousPost.url }}">{{ previousPost.data.title }}</a></h3>{% endif %}
-{% if nextPost %}<h3 class="secondary-container--post-nav__right flex">Postingan Selanjutnya <a style="font-size: 1.5rem" class="tertiary-container container--style" href="{{ nextPost.url }}">{{ nextPost.data.title }}</a></h3>{% endif %}
+{% set tipe = tags[0] %}
+{% if previousPost %}<h3 class="secondary-container--post-nav flex">{{ tipe }} Sebelumnya <a style="font-size: 1.5rem" class="tertiary-container container--style" href="{{ previousPost.url }}">{{ previousPost.data.title }}</a></h3>{% endif %}
+{% if nextPost %}<h3 class="secondary-container--post-nav__right flex">{{ tipe }} Selanjutnya <a style="font-size: 1.5rem" class="tertiary-container container--style" href="{{ nextPost.url }}">{{ nextPost.data.title }}</a></h3>{% endif %}
 </div>
   </div>
 </section>
