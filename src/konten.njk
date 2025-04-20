@@ -14,7 +14,7 @@ quote: "'Ideas can be killed.' 'How?' 'With better ideas.'"
                     <h2>Lengkap</h2>
                   </header>
     <ul class="secondary-container">
-    {% for year, yearPosts in collections.articleByYear %}
+    {% for year, yearPosts in collections.articlesByYear %}
     <h2>{{ year }}</h2>
     <ul class="secondary-container--postingan" >
  {% for post in yearPosts | reverse %}
