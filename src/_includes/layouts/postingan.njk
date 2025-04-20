@@ -21,10 +21,13 @@ layout: layouts/index.njk
    </div>
     </div>
   </article>
+{% if tags[0] == "postingan" %}
 {% set previousPost = collections.postingan | getPreviousCollectionItem %}
 {% set nextPost = collections.postingan | getNextCollectionItem %}
+{% else %}
 {% set previousPost = collections.artikel | getPreviousCollectionItem %}
 {% set nextPost = collections.artikel | getNextCollectionItem %}
+{%- endif -%}
 <div class="postingan__nav">
 <header style="overflow: hidden; display: flex; flex-direction: column; border-radius: var(--ui-radius); margin-bottom: var(--ui-padding)" class="postingan__header">
     <div class="container__header">

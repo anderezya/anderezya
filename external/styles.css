@@ -205,7 +205,7 @@ nav > .tertiary-container {
   backdrop-filter: var(--ui-blur);
   display: block;
   content: "";
-  height: 53%;
+  height: 54%;
   width: 100%;
   z-index: -1;
 }
