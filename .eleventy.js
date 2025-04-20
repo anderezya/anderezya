@@ -23,7 +23,7 @@ module.exports = function (eleventyConfig) {
       .toFormat("LLLL dd, EEEE");
   });
 
-  // Credits: https://github.com/11ty/eleventy/issues/1284#issuecomment-1026679407
+  // Credit: https://github.com/11ty/eleventy/issues/1284#issuecomment-1026679407
   eleventyConfig.addCollection("postsByYear", (collection) => {
     const posts = collection.getFilteredByTag("postingan").reverse();
     const years = posts.map((post) => post.date.getFullYear());
