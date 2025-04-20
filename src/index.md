@@ -41,7 +41,7 @@ Pedoman, Tutorial, dan Topik Menarik
         </li>
        {%- endfor -%}
    </ul>
-       <p class="click container__p"><a href="/postingan">Lihat Semua Artikel</a></p>
+       <p class="click container__p"><a href="/konten">Lihat Semua Artikel</a></p>
       </section>
     </article>
 </li>
@@ -70,7 +70,7 @@ Perkembangan, Rongsokan, dan Hal pribadi lainnya
         </li>
        {%- endfor -%}
    </ul>
-       <p class="click container__p"><a href="/postingan">Lihat Semua Postingan</a></p>
+       <p class="click container__p"><a href="/konten">Lihat Semua Postingan</a></p>
       </section>
     </article>
 </div>

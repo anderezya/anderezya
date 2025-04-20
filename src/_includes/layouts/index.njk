@@ -37,8 +37,9 @@
     <div data-pagefind-ignore class="sidebar--wrapper" style="grid-area: sb;">
       <div class="sidebar">
         <div class="logo--sidebar">
+        <a href="/">
 <img src="/external/asset/Anderezya_Foxtrot.svg" alt="Anderezya Wordmark" class="wordmark">
-        </div>
+        </a></div>
       <div class="home sidebar__content">
         <div class="primary-container">
         <div class="container__header">
@@ -66,9 +67,19 @@
         </div>
         <div class="container__p">
         <ul>
-          <li><a class="click" href="/content/artikel/anderezya/">Anderezya</a></li>
-        </ul>
+ {%- for post in collections.unggulan | reverse -%}   
+        <li {% if page.url == post.url %} aria-current="page" {% endif %}>
+          <a class="click" href="{{ post.url }}">
+            {{ post.data.title }}
+             </a>
+        </li>
+       {%- endfor -%}
+   </ul>
         </div>
+        </div>
+        <div class="separator"></div>
+        <div class="primary-container">
+        <h4 style="text-align: center;">1989 ◢ ◤ 2018</h4>
         </div>
         </div>
       </div>
@@ -77,7 +88,9 @@
       <header style="grid-area: hd" class="hd header">
       <div class="header shadow header__bar">
          <div class="logo--header-bar">
+           <a href="/">
 <img src="/external/asset/Anderezya_Foxtrot.svg" alt="Anderezya Wordmark" class="wordmark">
+           </a>
         </div>
         <div class="header__nav-bar--mobile">
         <details>
@@ -106,9 +119,9 @@
       </div>
         </div>
     </header>
-    <div class="secondary-container">
+    <div style="flex: 0;" class="secondary-container">
 <div class="primary-container">
-<h1 style="border-bottom: unset;" class="container__header">
+<h1 style="border-bottom: unset; font-family: 'Overpass Mono', 'Titillium Web', sans-serif; text-transform: unset;" class="container__header">
 {{ page.filePathStem }}
 </h1>
 </div>
@@ -125,7 +138,8 @@
         <div class="secondary-container--footer  secondary-container">
           <span>Dibuat menggunakan Node.js v14 &amp <a class="click" href="https://www.11ty.dev/">Eleventy</a> v2.0.0. </span> 
       <span style="min-width: unset; text-wrap: wrap;"><a class="click" href="mailto:alexander.dividers762@passinbox.com">alexander.dividers762@passinbox.com</a></span>
-          <span><i>"{{ quote }}"</i> </span>
+          <span>
+            {% if quote %}<i>"{{ quote }}"</i> {% endif %}</span>
         </div>
       </div>
     </footer>
@@ -148,11 +162,11 @@
             <br> 
             1989 ◢ ◤ 2018
             <br>
-            <i style="padding-bottom: var(--ui-padding);">"{{ quote }}"</i>
+            {% if quote %}<i>"{{ quote }}"</i> {% endif %}
           </div>
         </div>
     </footer>
    <!-- <script src="external/script.js"></script> -->
-  <script src="/pagefind/pagefind-ui.js" onload="new PagefindUI({ element: '#search', showImages: false });"></script>
+  <script src="/pagefind/pagefind-ui.js" onload="new PagefindUI({ element: '#search', showImages: false, showSubResults: true });"></script>
   </body>
 </html>
