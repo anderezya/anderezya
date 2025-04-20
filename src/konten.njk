@@ -1,0 +1,63 @@
+---
+
+layout: layouts/index.njk
+title: Konten
+description: Halaman Konten
+quote: "'Ideas can be killed.' 'How?' 'With better ideas.'"
+
+---
+
+<div style="min-height: 100vh; padding: var(--ui-padding); flex: 1;">
+  <section class="container__content page primary-container">
+    <header class="container__header">
+                    <h1>Artikel</h1>
+                    <h2>Lengkap</h2>
+                  </header>
+    <ul class="secondary-container">
+    {% for year, yearPosts in collections.articleByYear %}
+    <h2>{{ year }}</h2>
+    <ul class="secondary-container--postingan" >
+ {% for post in yearPosts | reverse %}
+        <li class="secondary-container--styled" {% if page.url == post.url %} aria-current="page" {% endif %} >
+          <article>
+          <a href="{{ post.url }}">
+          <header class="container__header">
+            <h3>{{ post.data.title }}</h3>
+            <h4>{{ post.data.page.date | noYear }}</h4>
+            <p class="container__p flex"> {{ post.data.description }}</p>
+          </header>
+             </a>
+          </article>
+        </li>
+       {%- endfor -%}
+   </ul>
+    {%- endfor -%}
+    </ul>
+</section>
+<section class="container__content page primary-container">
+    <header class="container__header">
+                    <h1>Postingan</h1>
+                    <h2>Lengkap</h2>
+                  </header>
+<ul class="secondary-container">
+{% for year, yearPosts in collections.postsByYear %}
+<h2>{{ year }}</h2>
+    <ul class="secondary-container--postingan" >
+  {% for post in yearPosts | reverse %}
+<li class="secondary-container--styled" {% if "page.url" == post.url %} aria-current="page" {% endif %}>
+<article>
+<a href="{{ post.url }}">
+<header class="container__header">
+<h3>{{ post.data.title }}</h3>
+<h4>{{ post.data.page.date | noYear }}</h4>
+<p style="padding-left: unset;" class="container__p flex"> {{ post.data.description }}</p>  
+</header>
+</a>
+</article>
+</li>
+{%- endfor -%}
+</ul>
+{%- endfor -%}
+</ul>
+</section>
+</div>
