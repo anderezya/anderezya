@@ -10,7 +10,7 @@ const markdownItAnchor = require("markdown-it-anchor");
 
 // Credit: https://github.com/11ty/eleventy/issues/1284#issuecomment-1026679407
   function groupByYear(collection, Tags) {
-    const posts = collection.getFilteredByTag("Tags").reverse();
+    const posts = collection.getFilteredByTag(Tags).reverse();
     const years = posts.map((post) => post.date.getFullYear());
     const uniqueYears = [...new Set(years)];
 
