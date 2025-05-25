@@ -26,23 +26,22 @@ Pedoman, Tutorial, dan Topik Menarik
 
   <div style="flex: 1; grid-area: primary-container3">
   <article class="primary-container">
-    <section style="justify-content: space-between;" class="secondary-container--nogap">
-     <ul class="secondary-container--postingan" >
+     <ul class="limit secondary-container--postingan" >
  {%- for post in collections.artikel | reverse -%}   
         <li class="secondary-container--styled" {% if page.url == post.url %} aria-current="page" {% endif %} >
           <article>
           <a href="{{ post.url }}">
-          <header class="container__header" style="border-bottom: unset;">
+          <header class="container__header">
             <h3>{{ post.data.title }}</h3>
-            <h4>{{ post.data.page.date | htmlDateString }}</h4>
+            <h5>{{ post.data.page.date | htmlDateString }}</h5>
           </header>
+          <p class="container__p"> {{ post.data.description}}</p>
              </a>
           </article>
         </li>
        {%- endfor -%}
    </ul>
        <p class="click container__p"><a href="/konten">Lihat Semua Artikel</a></p>
-      </section>
     </article>
 </li>
 </div>
@@ -55,15 +54,14 @@ Perkembangan, Rongsokan, dan Hal pribadi lainnya
 
 <div style="flex: 1; grid-area: primary-container4">
 <article class="primary-container">
-    <section style="justify-content: space-between;" class="secondary-container--nogap">
-    <ul style="flex: unset; flex-direction: column-reverse;" class="limit secondary-container" >
+    <ul style="flex: unset; flex-direction: column-reverse;" class="limit secondary-container--postingan" >
  {%- for post in collections.postingan -%}   
         <li style="flex: unset;" class="secondary-container--styled" {% if page.url == post.url %} aria-current="page" {% endif %} >
           <article>
           <a href="{{ post.url }}">
-          <header style="border-bottom: unset;" class="container__header row">
+          <header class="container__header row">
             <h3>{{ post.data.title }}</h3>
-            <h4>{{ post.data.page.date | htmlDateString }}</h4>
+            <h5>{{ post.data.page.date | htmlDateString }}</h5>
           </header>
              </a>
           </article>
@@ -71,7 +69,6 @@ Perkembangan, Rongsokan, dan Hal pribadi lainnya
        {%- endfor -%}
    </ul>
        <p class="click container__p"><a href="/konten">Lihat Semua Postingan</a></p>
-      </section>
     </article>
 </div>
 
