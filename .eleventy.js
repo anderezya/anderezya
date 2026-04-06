@@ -61,5 +61,8 @@ module.exports = function (eleventyConfig) {
       input: "src",
       output: "build",
     },
+    serverOptions: {
+      host: "0.0.0.0",
+    },
   };
 };

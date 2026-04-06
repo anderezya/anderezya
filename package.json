@@ -13,7 +13,7 @@
   },
   "scripts": {
     "build": "eleventy",
-    "start": "eleventy --serve && exit 0"
+    "start": "eleventy --serve --port=5000"
   },
   "engines": {
     "node": ">=14"
