@@ -28,7 +28,7 @@ Pedoman, Tutorial, dan Topik Menarik
   <article class="primary-container">
     <section style="justify-content: space-between;" class="secondary-container--nogap">
      <ul class="limit secondary-container--postingan" >
- {%- for post in collections.artikel | reverse -%}   
+ {%- for post in collections.artikel -%}   
         <li class="secondary-container--styled" {% if page.url == post.url %} aria-current="page" {% endif %} >
           <article>
           <a href="{{ post.url }}">
