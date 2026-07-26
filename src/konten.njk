@@ -8,7 +8,7 @@ quote: "'Ideas can be killed.' 'How?' 'With better ideas.'"
 ---
 
 <div style="min-height: 100vh; padding: var(--ui-padding); flex: 1;">
-  <section class="container__content page primary-container">
+  <section class=" page secondary-container--styled">
     <header class="container__header">
                     <h1>Artikel</h1>
                     <h2>Lengkap</h2>
@@ -24,8 +24,8 @@ quote: "'Ideas can be killed.' 'How?' 'With better ideas.'"
           <header class="container__header">
             <h3>{{ post.data.title }}</h3>
             <h4>{{ post.data.page.date | noYear }}</h4>
+            </header>
             <p class="container__p flex"> {{ post.data.description }}</p>
-          </header>
              </a>
           </article>
         </li>
@@ -34,7 +34,8 @@ quote: "'Ideas can be killed.' 'How?' 'With better ideas.'"
     {%- endfor -%}
     </ul>
 </section>
-<section class="container__content page primary-container">
+<div style="margin: 1rem;" class="separation"></div>
+<section class=" page secondary-container--styled">
     <header class="container__header">
                     <h1>Postingan</h1>
                     <h2>Lengkap</h2>

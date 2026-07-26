@@ -8,24 +8,28 @@ const md = markdownIt({ html: true })
   .use(require("markdown-it-task-lists"));
 const markdownItAnchor = require("markdown-it-anchor");
 
-// Credit: https://github.com/11ty/eleventy/issues/1284#issuecomment-1026679407
-  function groupByYear(collection, Tags) {
-    const posts = collection.getFilteredByTag(Tags).reverse();
-    const years = posts.map((post) => post.date.getFullYear());
-    const uniqueYears = [...new Set(years)];
+/* 
+Group By Year Function
+Origin: https://github.com/11ty/eleventy/issues/1284#issuecomment-1026679407
+By: Budi Irawan(@deerawan) 
+*/
+function groupByYear(collection, Tags) {
+  const posts = collection.getFilteredByTag(Tags).reverse();
+  const years = posts.map((post) => post.date.getFullYear());
+  const uniqueYears = [...new Set(years)];
 
-    const postsByYear = uniqueYears.reduce((prev, year) => {
-      const filteredPosts = posts.filter(
-        (post) => post.date.getFullYear() === year
-      );
+  const postsByYear = uniqueYears.reduce((prev, year) => {
+    const filteredPosts = posts.filter(
+      (post) => post.date.getFullYear() === year
+    );
 
-      return [...prev, [year, filteredPosts]];
-    }, []);
+    return [...prev, [year, filteredPosts]];
+  }, []);
 
-    return postsByYear;
-  };
+  return postsByYear;
+};
 
-module.exports = function (eleventyConfig) {
+module.exports = function(eleventyConfig) {
   eleventyConfig.addPlugin(syntaxHighlight);
   eleventyConfig.setTemplateFormats(["html", "njk", "md"]);
   eleventyConfig.addPassthroughCopy("external");
@@ -39,15 +43,15 @@ module.exports = function (eleventyConfig) {
       .setLocale("id")
       .toFormat("LLLL dd, EEEE");
   });
-  
-  eleventyConfig.addCollection("postsByYear", (collection) => 
-    groupByYear(collection, "postingan")                          
-    );
-  
-  eleventyConfig.addCollection("articlesByYear", (collection) => 
-    groupByYear(collection, "artikel")                          
-    );
-  
+
+  eleventyConfig.addCollection("postsByYear", (collection) =>
+    groupByYear(collection, "postingan")
+  );
+
+  eleventyConfig.addCollection("articlesByYear", (collection) =>
+    groupByYear(collection, "artikel")
+  );
+
   eleventyConfig.setLibrary("md", md);
 
   eleventyConfig.on("eleventy.after", () => {

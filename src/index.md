@@ -27,15 +27,17 @@ Pedoman, Tutorial, dan Topik Menarik
   <div style="flex: 1; grid-area: primary-container3">
   <article class="primary-container">
     <section style="justify-content: space-between;" class="secondary-container--nogap">
-     <ul class="secondary-container--postingan" >
+     <ul class="limit secondary-container--postingan" >
  {%- for post in collections.artikel | reverse -%}   
         <li class="secondary-container--styled" {% if page.url == post.url %} aria-current="page" {% endif %} >
           <article>
           <a href="{{ post.url }}">
-          <header class="container__header" style="border-bottom: unset;">
+          <header class="container__header"">
             <h3>{{ post.data.title }}</h3>
-            <h4>{{ post.data.page.date | htmlDateString }}</h4>
-          </header>
+            </header>
+            <div class="container__p">
+            <p>{{ post.data.page.date | htmlDateString }}</p>
+          </div>
              </a>
           </article>
         </li>

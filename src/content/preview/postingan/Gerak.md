@@ -3,13 +3,13 @@
 title: Gerak Postingan
 tags:
  - postingan
-layout: layouts/postingan.njk
+layout: layouts/standalone.njk
 description: Memperlihatkan berbagai macam gaya format
 date: 2025-03-20
 quote: Garlic
 
 ---
-
+Ini adalah kontent percobaan, {.direksi--kuning}
 # Bullet point
 
 * Sumber Daya Alam Tambang

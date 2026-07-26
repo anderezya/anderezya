@@ -10,3 +10,5 @@ _site
 !.gitconfig
 .ssh
 .ssh/
+.agents
+.replit

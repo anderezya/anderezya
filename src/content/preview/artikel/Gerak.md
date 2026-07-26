@@ -9,7 +9,7 @@ date: 2025-03-20
 quote: Garlic
 
 ---
-
+Ini adalah kontent percobaan, {.direksi--kuning}
 # Bullet point
 
 * Sumber Daya Alam Tambang

@@ -4,16 +4,8 @@ layout: layouts/index.njk
 
 ---
 
+
 <section data-pagefind-body class="content postingan page">
-<header style="display: none;" class="postingan__header">
-    <div class="container__header">
-      <h1 data-pagefind-meta="title">{{title}}</h1>
-      <h2 style="color: var(--ui-sfc)">{{description}}</h2>
-     </div>
-     <div class="postingan__date">
-      <span data-pagefind-ignore class="material-symbols-rounded">edit_calendar</span><h1>{{ page.date | htmlDateString }}</h1>
-     </div>
-   </header>
   <article>
  <div style="grid-area: ct; flex-direction: column;" class="postingan flex">
    <div class="postingan__p">
@@ -21,4 +13,40 @@ layout: layouts/index.njk
    </div>
     </div>
   </article>
+<div style="flex-direction: unset;" class="postingan__nav secondary-container--postingan ">
+<div class="postingan__nav__header secondary-container--styled ">
+<h2>INFORMASI UMUM</h2>
+ <p>
+ <span data-pagefind-meta="title">
+    <span>JUDUL:</span>
+   {{title}}
+      </span>
+      <span>
+      <span>DESKRIPSI:</span>
+      <span style="max-height: 1.1rem; overflow-y: scroll; color: unset;">{{description}}</span>
+      </span>
+      <span>
+      <span>TANGGAL:</span>
+      {{ page.date | htmlDateString }}
+      </span>
+      </p>
+   </div>
+   <div class="postingan__nav__header secondary-container--styled ">
+   <h2>INFORMASI TEKNIS</h2>
+    <p>
+    <span data-pagefind-meta="title">
+       <span>LAYOUT:</span>
+      {{layout}}
+         </span>
+         <span>
+         <span>TAGS:</span>
+         {{tags}}
+         </span>
+         <span>
+         <span>DIREKTORI:</span>
+        {{ page.filePathStem }}
+         </span>
+         </p>
+      </div>
+</div>
 </section>
