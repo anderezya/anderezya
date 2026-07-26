@@ -454,7 +454,6 @@ main {
   flex: unset;
   display: flex;
   padding: var(--ui-padding);
-  flex-direction: row-reverse;
 }
 
 .secondary-container--nogap {
@@ -464,10 +463,9 @@ main {
 .secondary-container--post-nav {
   flex-direction: column;
   text-wrap: wrap;
-}
-
-.secondary-container--post-nav__right {
-  flex-direction: row-reverse;
+  max-height: 15rem;
+  overflow: hidden;
+  overflow-wrap: break-word;
 }
 
 .secondary-container--post-nav,
