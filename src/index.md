@@ -28,7 +28,7 @@ Pedoman, Tutorial, dan Topik Menarik
   <article class="primary-container">
     <section style="justify-content: space-between;" class="secondary-container--nogap">
      <ul class="limit secondary-container--postingan" >
- {%- for post in collections.artikel | reverse -%}   
+ {%- for post in collections.artikel reversed -%}   
         <li class="secondary-container--styled" {% if page.url == post.url %} aria-current="page" {% endif %} >
           <article>
           <a href="{{ post.url }}">
@@ -59,7 +59,7 @@ Perkembangan, Rongsokan, dan Hal pribadi lainnya
 <article class="primary-container">
     <section style="justify-content: space-between;" class="secondary-container--nogap">
     <ul style="flex: unset; flex-direction: column-reverse;" class="limit secondary-container" >
- {%- for post in collections.postingan | reverse -%}   
+ {%- for post in collections.postingan reversed -%}   
         <li style="flex: unset;" class="secondary-container--styled" {% if page.url == post.url %} aria-current="page" {% endif %} >
           <article>
           <a href="{{ post.url }}">
