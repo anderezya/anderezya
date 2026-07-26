@@ -9,7 +9,7 @@ date: 2025-03-20
 quote: Garlic
 
 ---
-Ini adalah kontent percobaan, {.direksi--kuning}
+<span class="material-symbols-rounded">warning</span> Ini adalah kontent percobaan {.direksi--kuning}
 <div class="table--right">
 
 |Anderezya|

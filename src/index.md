@@ -58,7 +58,7 @@ Perkembangan, Rongsokan, dan Hal pribadi lainnya
 <div style="flex: 1; grid-area: primary-container4">
 <article class="primary-container">
     <section style="justify-content: space-between;" class="secondary-container--nogap">
-    <ul style="flex: unset; flex-direction: column-reverse;" class="limit secondary-container" >
+    <ul style="flex: unset;" class="limit secondary-container" >
  {%- for post in collections.postingan reversed -%}   
         <li style="flex: unset;" class="secondary-container--styled" {% if page.url == post.url %} aria-current="page" {% endif %} >
           <article>
