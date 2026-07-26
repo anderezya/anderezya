@@ -7,6 +7,7 @@ const md = markdownIt({ html: true })
   .use(require("markdown-it-attrs"))
   .use(require("markdown-it-task-lists"));
 const markdownItAnchor = require("markdown-it-anchor");
+const pluginTOC = require('eleventy-plugin-toc');
 
 /* 
 Group By Year Function
@@ -33,6 +34,10 @@ module.exports = function(eleventyConfig) {
   eleventyConfig.addPlugin(syntaxHighlight);
   eleventyConfig.setTemplateFormats(["html", "njk", "md"]);
   eleventyConfig.addPassthroughCopy("external");
+  eleventyConfig.addPlugin(pluginTOC, {
+                            tags: ['h1','h2', 'h3'],
+                            wrapper: 'div'
+                          });
   eleventyConfig.addFilter("htmlDateString", (dateObj) => {
     return DateTime.fromJSDate(dateObj, { zone: "utc+07:00" }).toFormat(
       "yyyy-LL-dd"

@@ -3,14 +3,14 @@
 title: Gerak Postingan
 tags:
  - postingan
-layout: layouts/standalone.njk
+layout: layouts/postingan.njk
 description: Memperlihatkan berbagai macam gaya format
 date: 2025-03-20
 quote: Garlic
 
 ---
 Ini adalah kontent percobaan, {.direksi--kuning}
-# Bullet point
+## Bullet point
 
 * Sumber Daya Alam Tambang
    * Strategis
@@ -26,7 +26,10 @@ Ini adalah kontent percobaan, {.direksi--kuning}
       * Granit
       * Batu Permata
 
-# Tabel
+## Tabel
+Whereas recognition of the inherent dignity and of the equal and inalienable rights of all members of the human family is the foundation of freedom, justice and peace in the world,
+
+Whereas disregard and contempt for human rights have resulted in barbarous acts which have outraged the conscience of mankind, and the advent of a world in which human beings shall enjoy freedom of speech and belief and freedom from fear and want has been proclaimed as the highest aspiration of the common people,
 
 <div class="table">
   
@@ -36,7 +39,7 @@ Ini adalah kontent percobaan, {.direksi--kuning}
   
 </div>
 
-# Quote
+## Quote
 
 > Hello World!
 
