@@ -1,7 +1,7 @@
 {
   "name": "anderezya",
   "dependencies": {
-    "@11ty/eleventy": "^2.0.0",
+    "@11ty/eleventy": "^3.1.6",
     "@11ty/eleventy-plugin-syntaxhighlight": "^5.0.0",
     "@types/markdown-it": "^13.0.9",
     "luxon": "^3.5.0",
@@ -16,7 +16,7 @@
     "start": "eleventy --serve --port=5000"
   },
   "engines": {
-    "node": ">=14"
+    "node": ">=20"
   },
   "glitch": {
     "projectType": "generated_static"
