@@ -83,7 +83,7 @@ Edukasi Mandiri {.direksi--hijau}
 
 **Digunakan untuk mendorong pembaca untuk mencari informasi mengenai topik tertentu*
 
-Gunakan Diskresi {.direksi--kuning}
+<span class="material-symbols-rounded">warning</span> Gunakan Diskresi {.direksi--kuning}
 
 **Digunakan untuk menyampaikan informasi penting*
 
