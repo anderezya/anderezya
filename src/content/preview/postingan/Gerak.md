@@ -10,6 +10,7 @@ quote: Garlic
 
 ---
 Ini adalah kontent percobaan, {.direksi--kuning}
+# Gerak Postingan
 ## Bullet point
 
 * Sumber Daya Alam Tambang

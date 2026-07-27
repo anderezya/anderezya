@@ -19,6 +19,7 @@ quote: Garlic
 |<strong>Website:</strong> Anderezya|
 </div>
 
+# Gaya Postigan
 ## Bullet point
 
 * Sumber Daya Alam Tambang
@@ -65,7 +66,7 @@ Proclaims this Universal Declaration of Human Rights as a common standard of ach
 
 ## Quote
 
-> Hello World!
+> "which was filmed at our studio in Indianapolis, Indiana."
 
 ## Code Block
 

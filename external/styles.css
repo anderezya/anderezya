@@ -38,7 +38,7 @@
   text-decoration: none;
   transition: all ease 0.3s 0.3s;
   outline: unset !important;
-  word-break: break-all;
+  word-break: balance;
 }
 
 h1 {
@@ -825,7 +825,7 @@ article > a {
   margin: unset;
 }
 
-.postingan__p > :where(h1, h2, h3, h4, h5),
+.postingan__p > :where(h1, h2, h3, h4, h5, p),
 .home > :where(h1, h2, h3, h4, h5) {
   color: var(--ui-fc);
   line-height: normal;
@@ -968,18 +968,15 @@ padding-left: 3rem;
 }
 
 blockquote {
-  border: var(--ui-stroke) #ffffff solid;
-  border-left: 0.5rem #ffffff solid;
-  padding-left: 0.5rem;
+  margin: 1rem 0.5rem;
   padding: var(--ui-padding);
   border-radius: var(--ui-radius);
   color: var(--ui-fc);
   font-weight: 600;
-  font-style: italic;
 }
 
 blockquote > p {
-  font-size: 1.6rem;
+  font-size: 1.5rem;
 }
 
 pre {
@@ -1002,11 +999,12 @@ pre {
   font-size: 1rem;
   padding: var(--ui-padding);
   border-radius: var(--ui-radius);
-  display: block;
+  display: flex;
   gap: var(--ui-gap);
   align-items: center;
   font-weight: 1000;
   text-transform: uppercase;
+  margin-top: 1rem;
 }
 
 .postingan__date {
