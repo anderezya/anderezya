@@ -1002,7 +1002,7 @@ pre {
   font-size: 1rem;
   padding: var(--ui-padding);
   border-radius: var(--ui-radius);
-  display: flex;
+  display: block;
   gap: var(--ui-gap);
   align-items: center;
   font-weight: 1000;
