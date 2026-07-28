@@ -36,7 +36,9 @@ module.exports = function(eleventyConfig) {
   eleventyConfig.addPassthroughCopy("external");
   eleventyConfig.addPlugin(pluginTOC, {
                             tags: ['h1','h2', 'h3'],
-                            wrapper: 'div'
+                            wrapper: 'div',
+                            ul: true,
+                            flat: false, 
                           });
   eleventyConfig.addFilter("htmlDateString", (dateObj) => {
     return DateTime.fromJSDate(dateObj, { zone: "utc+07:00" }).toFormat(

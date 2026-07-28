@@ -38,7 +38,7 @@
   text-decoration: none;
   transition: all ease 0.3s 0.3s;
   outline: unset !important;
-  word-break: balance;
+  word-break: break-word;
 }
 
 h1 {
@@ -100,11 +100,10 @@ body {
   justify-content: center;
   min-width: var(--ui-sidebar-width);
   max-width: var(--ui-sidebar-width);
-  height: calc(100vh - 4% - var(--ui-padding));
+  height: 90vh;
   position: sticky;
   top: calc(var(--ui-padding) + 2.5%);
   padding: var(--ui-padding);
-  overflow-y: scroll;
 }
 
 .sidebar {
@@ -134,6 +133,11 @@ td > a {
 word-break: break-word;
 max-width: 180px;
 display: block;
+}
+
+td:has(img){
+display: flex;
+justify-content: center;
 }
 
 .click,
@@ -948,14 +952,18 @@ th {
   color: var(--ui-fc);
 }
 
-li > ul, .toc > ol {
-  padding-left: 2rem;
+li > ul, ol, .toc > ol, .toc > ul {
+  padding-left: 2.5rem;
   font-size: 1.25rem;
   font-weight: 500;
 }
 
-.toc > ol {
-padding-left: 3rem;
+.toc > ol, .toc > ul, .toc ul {
+  list-style: number;
+}
+
+.number ol, .number ul {
+  list-style: number;
 }
 
 .postingan__p ul > li > a {
@@ -1010,6 +1018,15 @@ pre {
 .postingan__date {
   border: unset;
   border-radius: unset;
+}
+
+.black {
+background: black;
+  color: black;
+}
+.revealed {
+background: var(--ui-background-color);
+color: white;
 }
 
 .direksi--abu {
