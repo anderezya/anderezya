@@ -480,12 +480,12 @@ main {
 }
 
 .secondary-container--post-nav {
-  flex-direction: column;
   text-wrap: wrap;
   max-height: 15rem;
   overflow: hidden;
   overflow-wrap: break-word;
   min-width:15rem;
+  flex-direction: column;
 }
 
 .secondary-container--post-nav,
