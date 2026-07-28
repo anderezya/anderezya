@@ -61,21 +61,21 @@ layout: layouts/index.njk
   
 {% set tipe = tags[0] %}
 {% if previousPost %}
-<h3 class="secondary-container--post-nav flex">
-{{ tipe }} Sebelumnya 
-<a style="font-size: 1.5rem" class="tertiary-container container--style" href="{{ previousPost.url }}">
+<div class="secondary-container--post-nav flex">
+<h3>{{ tipe }} Sebelumnya </h3>
+<a style="font-size: 1.5rem" class="click tertiary-container container--style" href="{{ previousPost.url }}">
 {{ previousPost.data.title }}
 </a>
-</h3>
+</div>
 {% endif %}
   
 {% if nextPost %}
-<h3 class="secondary-container--post-nav flex">
-{{ tipe }} Selanjutnya 
-<a style="font-size: 1.5rem" class="tertiary-container container--style" href="{{ nextPost.url }}">
+<div class="secondary-container--post-nav flex">
+<h3>{{ tipe }} Selanjutnya</h3>
+<a style="font-size: 1.5rem" class="click tertiary-container container--style" href="{{ nextPost.url }}">
 {{ nextPost.data.title }}
 </a>
-</h3>
+</div>
 {% endif %}
 </div>
 </div>

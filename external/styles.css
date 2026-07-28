@@ -145,6 +145,7 @@ justify-content: center;
 .postingan__p p > a,
 li > a {
   color: #669bbc !important;
+  font-weight: 600;
 }
 
 .flex {
