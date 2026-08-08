@@ -3,7 +3,6 @@
 layout: layouts/index.njk
 
 ---
-
 <section data-pagefind-body class="content postingan page">
   <article>
  <div style="grid-area: ct; flex-direction: column;" class="postingan flex">
@@ -25,7 +24,7 @@ layout: layouts/index.njk
 <div class="postingan__nav__header secondary-container--styled ">
 <h2>INFORMASI UMUM</h2>
  <p>
- <span data-pagefind-meta="title">
+ <span span data-pagefind-meta="title">
     <span>JUDUL:</span>
    {{title}}
       </span>
@@ -42,7 +41,7 @@ layout: layouts/index.njk
    <div class="postingan__nav__header secondary-container--styled ">
    <h2>INFORMASI TEKNIS</h2>
     <p>
-    <span data-pagefind-meta="title">
+    <span>
        <span>LAYOUT:</span>
       {{layout}}
          </span>
@@ -63,7 +62,7 @@ layout: layouts/index.njk
 {% if previousPost %}
 <div class="secondary-container--post-nav flex">
 <h3>{{ tipe }} Sebelumnya </h3>
-<a style="font-size: 1.5rem; overflow: scroll;" class="click tertiary-container container--style" href="{{ previousPost.url }}">
+<a class="click tertiary-container container--style" href="{{ previousPost.url }}">
 {{ previousPost.data.title }}
 </a>
 </div>
@@ -72,7 +71,7 @@ layout: layouts/index.njk
 {% if nextPost %}
 <div class="secondary-container--post-nav flex">
 <h3>{{ tipe }} Selanjutnya</h3>
-<a style="font-size: 1.5rem; overflow: scroll;" class="click tertiary-container container--style" href="{{ nextPost.url }}">
+<a class="click tertiary-container container--style" href="{{ nextPost.url }}">
 {{ nextPost.data.title }}
 </a>
 </div>

@@ -84,7 +84,7 @@ Whereas a common understanding of these rights and freedoms is of the greatest i
 Now, therefore,
 
 The General Assembly,
-
+<img alt="Anderezya Logo" style="max-width: 200px; width: 100%; aspect-ratio: 1/1;" src="https://anderezya.pages.dev/external/asset/Anderezya_November.svg" />
 Proclaims this Universal Declaration of Human Rights as a common standard of achievement for all peoples and all nations, to the end that every individual and every organ of society, keeping this Declaration constantly in mind, shall strive by teaching and education to promote respect for these rights and freedoms and by progressive measures, national and international, to secure their universal and effective recognition and observance, both among the peoples of Member States themselves and among the peoples of territories under their jurisdiction. 
 
 ## Quote

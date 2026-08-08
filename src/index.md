@@ -59,7 +59,7 @@ Perkembangan, Rongsokan, dan Hal pribadi lainnya
         <li style="flex: unset; padding: unset;" class="secondary-container column block" {% if page.url == post.url %} aria-current="page" {% endif %} >
           <article>
           <a style="color: unset;" href="{{ post.url }}">
-          <header style="border-bottom: unset; line-height: 1.4rem;" class="container__header column">
+          <header class="container__header--solo column">
             <h3 class="click">{{ post.data.title }}</h3>
             <p>{{ post.data.page.date | htmlDateString }}</p>
           </header>
