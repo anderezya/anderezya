@@ -7,7 +7,8 @@
     <meta name="description" content="{{ description }}">
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Anderezya | {{title}}</title>
+    <title>Anderezya | {{ title }}</title>
+    <link rel="alternate" href="/feed.xml" type="application/atom+xml" title="{{ title }}">
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -112,9 +113,9 @@
           <div class="footer__top__fence"> </div>
         <div class="header__nav-bar--desktop right">
           <nav>
-          <a class="tertiary-container container--style" href="/">Beranda</a>
-          <a class="tertiary-container container--style" href="/konten">Konten</a>
-          <a class="tertiary-container container--style" href="/content/anderezya/artikel/ts">Tentang Saya</a>
+          <a class="tertiary-container container--style" href="/">[ Beranda ]</a>
+          <a class="tertiary-container container--style" href="/konten">[ Konten ]</a>
+          <a class="tertiary-container container--style" href="/content/anderezya/artikel/ts">[ Tentang Saya ]</a>
           </nav>
           </div>
       </div>
@@ -124,7 +125,7 @@
 <div style="flex: 0; padding-bottom: unset;" class="secondary-container">
 <div class="secondary-container--styled">
 <p style="background-color: unset; font-family: 'Overpass Mono', 'Titillium Web', sans-serif; text-transform: unset;" class="container__header--solo">
- {{ page.filePathStem }}
+[ {{ page.filePathStem }} ]
 </p>
 </div>
 </div>
@@ -134,12 +135,12 @@
         <div style=" justify-content: center" class="footer__content">
         <div class="wordmark__container">
         <img src="/external/asset/Anderezya_Foxtrot.svg" alt="Anderezya Wordmark" class="wordmark">
-        <div> © 2025 Alexander (Anderezya) </div>
+        <div> © 2026 Alexander (Anderezya) </div>
         <div>Indonesia, California.</div>
         </div>
         <div class="footer__top__fence"></div>
         <div class="secondary-container--footer  secondary-container">
-          <span>Dibuat menggunakan Node.js v14 &amp <a class="click" href="https://www.11ty.dev/">Eleventy</a> v2.0.0. </span> 
+          <span>Dibuat menggunakan Node.js v20+ &amp <a class="click" href="https://www.11ty.dev/">Eleventy</a> v3.0.0+ </span> 
       <span style="min-width: unset; text-wrap: wrap;"><a class="click" href="mailto:alexander.dividers762@passinbox.com">alexander.dividers762@passinbox.com</a></span>
           <span>
             {% if quote %}<i>"{{ quote }}"</i> {% endif %}</span>
@@ -159,7 +160,7 @@
             <div class="tertiary-container" style="min-width: unset; text-wrap: wrap;"><a class="click" href="mailto:alexander.dividers762@passinbox.com">alexander.dividers762@passinbox.com</a></div>
               </div>
           </div>
-            Dibuat menggunakan <span>Node.js &amp <a class="click" href="https://www.11ty.dev/">Eleventy</a> v2.0.0.</span>
+            Dibuat menggunakan <span>Node.js v20+ &amp <a class="click" href="https://www.11ty.dev/">Eleventy</a> v3.0.0+</span>
             <br>
             Indonesia, California.
             <br> 

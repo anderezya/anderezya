@@ -2,7 +2,8 @@
 
 title: Gerak Postingan
 tags:
- - postingan
+ - publik
+ - teknologi
 layout: layouts/postingan.njk
 description: Memperlihatkan berbagai macam gaya format
 date: 2025-03-20

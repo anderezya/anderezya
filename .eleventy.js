@@ -7,7 +7,8 @@ const md = markdownIt({ html: true })
   .use(require("markdown-it-attrs"))
   .use(require("markdown-it-task-lists"));
 const markdownItAnchor = require("markdown-it-anchor");
-const pluginTOC = require('eleventy-plugin-toc');
+const pluginTOC = require("eleventy-plugin-toc");
+const { feedPlugin } = require("@11ty/eleventy-plugin-rss");
 
 /* 
 Group By Year Function
@@ -21,30 +22,36 @@ function groupByYear(collection, Tags) {
 
   const postsByYear = uniqueYears.reduce((prev, year) => {
     const filteredPosts = posts.filter(
-      (post) => post.date.getFullYear() === year
+      (post) => post.date.getFullYear() === year,
     );
 
     return [...prev, [year, filteredPosts]];
   }, []);
 
   return postsByYear;
-};
+}
 
-module.exports = function(eleventyConfig) {
+module.exports = function (eleventyConfig) {
   eleventyConfig.addPlugin(syntaxHighlight);
   eleventyConfig.setTemplateFormats(["html", "njk", "md"]);
   eleventyConfig.addPassthroughCopy("external");
   eleventyConfig.addPlugin(pluginTOC, {
-                            tags: ['h1','h2', 'h3'],
-                            wrapper: 'div',
-                            ul: true,
-                            flat: false, 
-                          });
-  eleventyConfig.addFilter("htmlDateString", (dateObj) => {
+    tags: ["h1", "h2", "h3"],
+    wrapper: "div",
+    ul: true,
+    flat: false,
+  });
+  eleventyConfig.addFilter("customFormat", (dateObj) => {
     return DateTime.fromJSDate(dateObj, { zone: "utc+07:00" }).toFormat(
-      "yyyy-LL-dd"
+      " DD hh:mm:ss | cccc | 'Day' o 'of' yyyy",
     );
   });
+  eleventyConfig.addFilter("htmlDateString", (dateObj) => {
+    return DateTime.fromJSDate(dateObj, { zone: "utc+07:00" }).toFormat(
+      "yyyy-M-dd",
+    );
+  });
+  
   eleventyConfig.addFilter("noYear", (dateObj) => {
     return DateTime.fromJSDate(dateObj, { zone: "utc+07:00" })
       .setLocale("id")
@@ -52,14 +59,39 @@ module.exports = function(eleventyConfig) {
   });
 
   eleventyConfig.addCollection("postsByYear", (collection) =>
-    groupByYear(collection, "postingan")
+    groupByYear(collection, "postingan"),
   );
 
   eleventyConfig.addCollection("articlesByYear", (collection) =>
-    groupByYear(collection, "artikel")
+    groupByYear(collection, "artikel"),
   );
 
+  eleventyConfig.addCollection("jurnalByYear", (collection) =>
+    groupByYear(collection, "jurnal"),
+  );
+
+  eleventyConfig.addLayoutAlias("layouts/postingan.njk", "layouts/konten.njk");
+
   eleventyConfig.setLibrary("md", md);
+
+  eleventyConfig.addPlugin(feedPlugin, {
+    type: "atom", 
+    outputPath: "/feed.xml",
+    collection: {
+      name: "postingan",
+      limit: 10,    
+    },
+    metadata: {
+      language: "id",
+      title: "Kabar Ander",
+      subtitle: "Postingan terbaru dari Anderezya.",
+      base: "https://anderezya.pages.dev/",
+      author: {
+        name: "Anderezya",
+        email: "alexander.dividers762@passinbox.com ", 
+      }
+    }
+  });
 
   eleventyConfig.on("eleventy.after", () => {
     execSync(`npx pagefind --site build --glob \"**/*.html\"`, {

@@ -9,6 +9,9 @@ layout: layouts/index.njk
    <div class="postingan__p">
    <h3>Navigasi Konten</h3>
    {{ content | toc | safe }}
+   <h1>{{ title }}</h1>
+   {{ page.date | customFormat }} 
+   <div class="separator"></div>
       {{ content | safe }}
    </div>
     </div>
@@ -47,7 +50,10 @@ layout: layouts/index.njk
          </span>
          <span>
          <span>TAGS:</span>
-         {{tags}}
+         {%- for tag in tags -%}
+         {% set tagUrl %}/tags/{{ tag | slugify }}/{% endset %}
+         <a href="{{ tagUrl }}" class="post-tag">{{ tag }}</a>, 
+         {% endfor %}
          </span>
          <span>
          <span>DIREKTORI:</span>
@@ -55,8 +61,9 @@ layout: layouts/index.njk
          </span>
          </p>
       </div>
-   
-  
+
+{% if "artikel" not in tags %}
+
 {% set tipe = tags[0] %}
 {% if previousPost %}
 <div class="primary-container--post-nav">
@@ -68,6 +75,7 @@ layout: layouts/index.njk
 </div>
 {% endif %}
 </div>
+
 {% if nextPost %}
 <div class="primary-container--post-nav">
 <div class="secondary-container--post-nav flex">
@@ -77,6 +85,9 @@ layout: layouts/index.njk
 </a>
 </div>
 {% endif %}
+
+{% endif %}
+
 </div>
 </div>
 </div>

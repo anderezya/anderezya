@@ -1,9 +1,8 @@
 ---
 
-title: Gerak Artikel
-layout: layouts/postingan.njk
+title: Gamma
 description: Memperlihatkan berbagai macam gaya format
-date: 2025-03-20
+date: 2026-03-20
 quote: Garlic
 
 ---

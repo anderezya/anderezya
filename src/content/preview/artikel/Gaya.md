@@ -4,6 +4,8 @@ title: Gaya Artikel
 tags:
  - artikel
  - unggulan
+ - standalone
+ - pribadi
 layout: layouts/postingan.njk
 description: Memperlihatkan berbagai macam gaya format
 date: 2026-03-20
