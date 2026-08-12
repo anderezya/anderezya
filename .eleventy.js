@@ -7,6 +7,7 @@ const md = markdownIt({ html: true })
   .use(require("markdown-it-attrs"))
   .use(require("markdown-it-task-lists"));
 const markdownItAnchor = require("markdown-it-anchor");
+const { eleventyImageTransformPlugin } = require("@11ty/eleventy-img");
 const pluginTOC = require("eleventy-plugin-toc");
 const { feedPlugin } = require("@11ty/eleventy-plugin-rss");
 
@@ -73,6 +74,18 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addLayoutAlias("layouts/postingan.njk", "layouts/konten.njk");
 
   eleventyConfig.setLibrary("md", md);
+
+  eleventyConfig.addPlugin(eleventyImageTransformPlugin, {
+    formats: ["avif", "webp", "jpeg"],
+    widths: ["300px"],
+    htmlOptions: {
+      imgAttributes: {
+        loading: "lazy",
+        decoding: "async",
+      },
+      pictureAttributes: {}
+    },
+  });
 
   eleventyConfig.addPlugin(feedPlugin, {
     type: "atom", 
