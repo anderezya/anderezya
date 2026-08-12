@@ -24,7 +24,7 @@ Ikuti <a title="Help! What is a feed?" href="https://aboutfeeds.com/">RSS</a><sp
 
 # Artikel
 
-Pedoman, Tutorial, dan Topik Menarik
+Pedoman, tutorial, dan topik mendalam lainnya.
 
   <div style="flex: 1; grid-area: primary-container3">
   <article class="primary-container">
@@ -53,7 +53,7 @@ Pedoman, Tutorial, dan Topik Menarik
 
 # Postingan
 
-Opini pribadi, blog, essay, dan ide 
+Opini pribadi, blog, essay, dan tumpahan pikiran lainnya.
 
 <div class="primary-container" style="flex: 1; grid-area: primary-container4">
     <ul style="flex: unset; padding: var(--ui-padding) 0;" class="limit secondary-container" >

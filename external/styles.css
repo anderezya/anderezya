@@ -597,6 +597,11 @@ padding: var(--ui-padding) 0;
   gap: unset;
 }
 
+.postingan__p > .toc {
+  max-height: 20vh;
+  overflow: scroll;
+}
+
 .container__content {
   min-width: unset;
   width: unset;

@@ -6,6 +6,7 @@ tags:
  - unggulan
  - standalone
  - pribadi
+ - siaga-bencana
 layout: layouts/postingan.njk
 description: Memperlihatkan berbagai macam gaya format
 date: 2026-03-20
