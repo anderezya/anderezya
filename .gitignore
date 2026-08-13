@@ -3,6 +3,7 @@
 node_modules
 web_modules
 build
+preview
 _site
 .git/
 .gitmodules.lock

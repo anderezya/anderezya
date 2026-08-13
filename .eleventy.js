@@ -36,6 +36,7 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addPlugin(syntaxHighlight);
   eleventyConfig.setTemplateFormats(["html", "njk", "md"]);
   eleventyConfig.addPassthroughCopy("external");
+  eleventyConfig.addPassthroughCopy("**/*.{png,jpg,jpeg,svg}");
   eleventyConfig.addPlugin(pluginTOC, {
     tags: ["h1", "h2", "h3"],
     wrapper: "div",
@@ -76,16 +77,20 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.setLibrary("md", md);
 
   eleventyConfig.addPlugin(eleventyImageTransformPlugin, {
-    formats: ["avif", "webp", "jpeg"],
-    widths: ["300px"],
+    formats: ["avif", "webp", "jpeg", "svg"],
+    failOnError: false,
+    widths: ["auto"],
+    svgShortCircuit: true,
     htmlOptions: {
       imgAttributes: {
         loading: "lazy",
         decoding: "async",
+        sizes: "100vw",
       },
       pictureAttributes: {}
     },
   });
+  
 
   eleventyConfig.addPlugin(feedPlugin, {
     type: "atom", 

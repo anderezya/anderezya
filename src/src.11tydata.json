@@ -1,3 +1,4 @@
 {
-  "layout": "layouts/standalone.njk"
+  "layout": "layouts/standalone.njk",
+  "permalink": "{{ page.filePathStem }}.html"
 }

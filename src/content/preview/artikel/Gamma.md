@@ -7,6 +7,8 @@ quote: Garlic
 
 ---
 Ini adalah kontent percobaan, {.direksi--kuning}
+
+![](image/romeo.svg) {.table--right}
 # Bullet point
 
 * Sumber Daya Alam Tambang

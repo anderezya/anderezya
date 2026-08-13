@@ -18,7 +18,7 @@ Pelajar, warga sipil, konstituen, penggemar fiksi ilmiah, dan lebih banyak lagi.
 Ikuti <a title="Help! What is a feed?" href="https://aboutfeeds.com/">RSS</a><span class="material-symbols-rounded" style="color: yellow; font-size: 1rem;">rss_feed</span> postingan dengan menyalin url pada halaman <a href="/feed.xml">ini</a>.
   
 </div>
-<img alt="Anderezya Logo" style="max-width: 200px; width: 100%; aspect-ratio: 1/1;" src="./external/asset/Anderezya_November.svg">
+<img alt="Anderezya Logo" style="max-width: 200px; width: 100%; aspect-ratio: 1/1;" eleventy:ignore src="./external/asset/Anderezya_November.svg">
 </div>
 <div class="separator"></div>
 
