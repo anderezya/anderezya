@@ -79,7 +79,7 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addPlugin(eleventyImageTransformPlugin, {
     formats: ["avif", "webp", "jpeg", "svg"],
     failOnError: false,
-    widths: ["auto"],
+    widths: ["auto", 250],
     svgShortCircuit: true,
     htmlOptions: {
       imgAttributes: {
