@@ -605,7 +605,7 @@ padding: var(--ui-padding) 0;
 
 
  p > picture, p > img {
-   max-width: 20vw;
+   max-width: 20rem;
    display: inline-flex;
  }
 
