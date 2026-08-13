@@ -603,6 +603,12 @@ padding: var(--ui-padding) 0;
   gap: unset;
 }
 
+
+ p > picture, p > img {
+   max-width: 20vw;
+   display: inline-flex;
+ }
+
 .postingan__p > .toc {
   max-height: 20vh;
   overflow: scroll;
@@ -952,6 +958,11 @@ li > ul, ol, .toc > ol, .toc > ul {
   padding-left: 2.5rem;
   font-size: 1.25rem;
   font-weight: 500;
+}
+
+li::marker {
+  color: white;
+  font-weight: 900;
 }
 
 .toc > ol, .toc > ul, .toc ul {
