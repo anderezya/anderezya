@@ -8,24 +8,31 @@ quote: "'Ideas can be killed.' 'How?' 'With better ideas.'"
 ---
 
 <div style="min-height: 100vh; padding: var(--ui-padding); flex: 1;">
-  <section class="container__content page primary-container">
+<div class="header__nav-bar right">
+
+<a class="tertiary-container container--style" href="#artikel">[ Artikel ]</a>
+<a class="tertiary-container container--style" href="#postingan">[ Postingan ]</a>
+<a class="tertiary-container container--style" href="#tags">[ Tagar ]</a>
+
+</div>
+  <section class=" page secondary-container">
     <header class="container__header">
-                    <h1>Artikel</h1>
+                    <h1 id="artikel">Artikel</h1>
                     <h2>Lengkap</h2>
                   </header>
     <ul class="secondary-container">
-    {% for year, yearPosts in collections.articlesByYear %}
+    {%- for year, yearPosts in collections.articlesByYear -%}
     <h2>{{ year }}</h2>
     <ul class="secondary-container--postingan" >
- {% for post in yearPosts | reverse %}
+ {%- for post in yearPosts | reverse -%}
         <li class="secondary-container--styled" {% if page.url == post.url %} aria-current="page" {% endif %} >
           <article>
           <a href="{{ post.url }}">
           <header class="container__header">
-            <h3>{{ post.data.title }}</h3>
+            <h3>[ {{ post.data.title }} ]</h3>
             <h4>{{ post.data.page.date | noYear }}</h4>
+            </header>
             <p class="container__p flex"> {{ post.data.description }}</p>
-          </header>
              </a>
           </article>
         </li>
@@ -34,13 +41,16 @@ quote: "'Ideas can be killed.' 'How?' 'With better ideas.'"
     {%- endfor -%}
     </ul>
 </section>
-<section class="container__content page primary-container">
+
+<div style="margin: 1rem;" class="separation"></div>
+
+<section class=" page secondary-container">
     <header class="container__header">
-                    <h1>Postingan</h1>
+                    <h1 id="postingan">Postingan</h1>
                     <h2>Lengkap</h2>
                   </header>
 <ul class="secondary-container">
-{% for year, yearPosts in collections.postsByYear %}
+{%- for year, yearPosts in collections.postsByYear -%}
 <h2>{{ year }}</h2>
     <ul class="secondary-container--postingan" >
   {% for post in yearPosts | reverse %}
@@ -48,10 +58,10 @@ quote: "'Ideas can be killed.' 'How?' 'With better ideas.'"
 <article>
 <a href="{{ post.url }}">
 <header class="container__header">
-<h3>{{ post.data.title }}</h3>
+<h3>[ {{ post.data.title }} ]</h3>
 <h4>{{ post.data.page.date | noYear }}</h4>
-<p style="padding-left: unset;" class="container__p flex"> {{ post.data.description }}</p>  
 </header>
+<p style="padding-left: unset;" class="container__p flex"> {{ post.data.description }}</p>  
 </a>
 </article>
 </li>
@@ -59,5 +69,18 @@ quote: "'Ideas can be killed.' 'How?' 'With better ideas.'"
 </ul>
 {%- endfor -%}
 </ul>
+</section>
+<section class=" page secondary-container">
+<h1 id="tags">Tagar</h1>
+<section class=" page secondary-container">
+<header class="container__header">
+</header>
+<ul class="ul--tagar secondary-container--postingan">        
+{%- for tag, post in collections -%}
+{% set tagUrl %}/tags/{{ tag | slugify }}/{% endset %}
+  <li class="secondary-container--styled"><header class="container__header"><h3><a href="{{ tagUrl }}" {% if page.url == post.url %} aria-current="page" {% endif %}>[ {{ tag }} ]</a></h3></header></li>
+{% endfor %}
+</ul>
+</section>
 </section>
 </div>

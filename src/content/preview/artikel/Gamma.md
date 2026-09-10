@@ -1,19 +1,14 @@
 ---
 
-title: Gaya Artikel
-tags:
- - artikel
- - unggulan
- - standalone
- - pribadi
- - siaga-bencana
-layout: layouts/postingan.njk
+title: Gamma
 description: Memperlihatkan berbagai macam gaya format
 date: 2026-03-20
 quote: Garlic
 
 ---
 Ini adalah kontent percobaan, {.direksi--kuning}
+
+![](image/romeo.svg) {.table--right}
 # Bullet point
 
 * Sumber Daya Alam Tambang

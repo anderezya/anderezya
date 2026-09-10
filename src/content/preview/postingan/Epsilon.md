@@ -1,10 +1,9 @@
 ---
 
-title: Gaya Postingan
-tags:
- - pribadi
- - teknologi
+title: Epsilon
 description: Memperlihatkan berbagai macam gaya format
+tags:
+- teknologi
 date: 2025-03-20
 quote: Garlic
 

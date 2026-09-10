@@ -7,48 +7,109 @@ const md = markdownIt({ html: true })
   .use(require("markdown-it-attrs"))
   .use(require("markdown-it-task-lists"));
 const markdownItAnchor = require("markdown-it-anchor");
+const { eleventyImageTransformPlugin } = require("@11ty/eleventy-img");
+const pluginTOC = require("eleventy-plugin-toc");
+const { feedPlugin } = require("@11ty/eleventy-plugin-rss");
 
-// Credit: https://github.com/11ty/eleventy/issues/1284#issuecomment-1026679407
-  function groupByYear(collection, Tags) {
-    const posts = collection.getFilteredByTag(Tags).reverse();
-    const years = posts.map((post) => post.date.getFullYear());
-    const uniqueYears = [...new Set(years)];
+/* 
+Group By Year Function
+Origin: https://github.com/11ty/eleventy/issues/1284#issuecomment-1026679407
+By: Budi Irawan(@deerawan) 
+*/
+function groupByYear(collection, Tags) {
+  const posts = collection.getFilteredByTag(Tags).reverse();
+  const years = posts.map((post) => post.date.getFullYear());
+  const uniqueYears = [...new Set(years)];
 
-    const postsByYear = uniqueYears.reduce((prev, year) => {
-      const filteredPosts = posts.filter(
-        (post) => post.date.getFullYear() === year
-      );
+  const postsByYear = uniqueYears.reduce((prev, year) => {
+    const filteredPosts = posts.filter(
+      (post) => post.date.getFullYear() === year,
+    );
 
-      return [...prev, [year, filteredPosts]];
-    }, []);
+    return [...prev, [year, filteredPosts]];
+  }, []);
 
-    return postsByYear;
-  };
+  return postsByYear;
+}
 
 module.exports = function (eleventyConfig) {
   eleventyConfig.addPlugin(syntaxHighlight);
   eleventyConfig.setTemplateFormats(["html", "njk", "md"]);
   eleventyConfig.addPassthroughCopy("external");
-  eleventyConfig.addFilter("htmlDateString", (dateObj) => {
+  eleventyConfig.addPassthroughCopy("**/*.{png,jpg,jpeg,svg}");
+  eleventyConfig.addPlugin(pluginTOC, {
+    tags: ["h1", "h2", "h3"],
+    wrapper: "div",
+    ul: true,
+    flat: false,
+  });
+  eleventyConfig.addFilter("customFormat", (dateObj) => {
     return DateTime.fromJSDate(dateObj, { zone: "utc+07:00" }).toFormat(
-      "yyyy-LL-dd"
+      " DD hh:mm:ss | cccc | 'Day' o 'of' yyyy",
     );
   });
+  eleventyConfig.addFilter("htmlDateString", (dateObj) => {
+    return DateTime.fromJSDate(dateObj, { zone: "utc+07:00" }).toFormat(
+      "yyyy-M-dd",
+    );
+  });
+  
   eleventyConfig.addFilter("noYear", (dateObj) => {
     return DateTime.fromJSDate(dateObj, { zone: "utc+07:00" })
       .setLocale("id")
       .toFormat("LLLL dd, EEEE");
   });
-  
-  eleventyConfig.addCollection("postsByYear", (collection) => 
-    groupByYear(collection, "postingan")                          
-    );
-  
-  eleventyConfig.addCollection("articlesByYear", (collection) => 
-    groupByYear(collection, "artikel")                          
-    );
-  
+
+  eleventyConfig.addCollection("postsByYear", (collection) =>
+    groupByYear(collection, "postingan"),
+  );
+
+  eleventyConfig.addCollection("articlesByYear", (collection) =>
+    groupByYear(collection, "artikel"),
+  );
+
+  eleventyConfig.addCollection("jurnalByYear", (collection) =>
+    groupByYear(collection, "jurnal"),
+  );
+
+  eleventyConfig.addLayoutAlias("layouts/postingan.njk", "layouts/konten.njk");
+
   eleventyConfig.setLibrary("md", md);
+
+  eleventyConfig.addPlugin(eleventyImageTransformPlugin, {
+    formats: ["avif", "webp", "jpeg", "svg"],
+    failOnError: false,
+    widths: ["auto", 250],
+    svgShortCircuit: true,
+    htmlOptions: {
+      imgAttributes: {
+        loading: "lazy",
+        decoding: "async",
+        sizes: "100vw",
+      },
+      pictureAttributes: {}
+    },
+  });
+  
+
+  eleventyConfig.addPlugin(feedPlugin, {
+    type: "atom", 
+    outputPath: "/feed.xml",
+    collection: {
+      name: "postingan",
+      limit: 10,    
+    },
+    metadata: {
+      language: "id",
+      title: "Kabar Ander",
+      subtitle: "Postingan terbaru dari Anderezya.",
+      base: "https://anderezya.pages.dev/",
+      author: {
+        name: "Anderezya",
+        email: "alexander.dividers762@passinbox.com ", 
+      }
+    }
+  });
 
   eleventyConfig.on("eleventy.after", () => {
     execSync(`npx pagefind --site build --glob \"**/*.html\"`, {
@@ -59,7 +120,11 @@ module.exports = function (eleventyConfig) {
   return {
     dir: {
       input: "src",
+      data: "_data",
       output: "build",
+    },
+    serverOptions: {
+      host: "0.0.0.0",
     },
   };
 };

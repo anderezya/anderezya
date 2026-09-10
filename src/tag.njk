@@ -1,0 +1,62 @@
+---
+pagination:
+  data: collections
+  size: 1
+  alias: tag
+  filter: 
+  - articlesByYear
+  - postsByYear
+permalink: /tags/{{ tag }}/
+---
+
+{% if "jurnal" not in tag %}
+<h1>Tagged “{{ tag }}”</h1>
+<div class="separator"></div>
+<ol class="number">
+{% set taglist = collections[ tag ] %}
+{% for post in taglist | reverse %}
+<li style="flex: unset; padding: unset;" class="secondary-container column block">
+  <article>
+  <a style="color: unset;" href="{{ post.url }}">
+  <header class="container__header--solo column">
+    <h3 class="click">{{ post.data.title }}</h3>
+    <p>{{ post.data.page.date | htmlDateString }}</p>
+  </header>
+     </a>
+  </article>
+</li>
+{% endfor %}
+</ol>
+{% else %}
+<h1>Jurnal</h1>
+<ul class="secondary-container column">
+    {%- for year, yearPosts in collections.jurnalByYear -%}
+    <h2>{{ year }}</h2>
+    <ul class="secondary-container column number" >
+ {%- for post in yearPosts | reverse -%}
+        <li class="secondary-container column block" {% if page.url == post.url %} aria-current="page" {% endif %} >
+          <article>
+          <a class="click" href="{{ post.url }}">
+          <header class="container__header--solo">
+            <h3>[ {{ post.data.title }} ]</h3>
+            <h4>{{ post.data.page.date | noYear }}</h4>
+            </header>
+             </a>
+          </article>
+        </li>
+       {%- endfor -%}
+   </ul>
+    {%- endfor -%}
+    </ul>
+{% endif %}
+
+<h1 id="tags">Tagar</h1>
+<section class=" page secondary-container">
+<header class="container__header">
+</header>
+<ul class=" ul--tagar secondary-container--postingan">        
+{%- for tag, post in collections -%}
+{% set tagUrl %}/tags/{{ tag | slugify }}/{% endset %}
+  <li class="secondary-container--styled"><header class="container__header"><h3><a href="{{ tagUrl }}" {% if page.url == tagUrl %} aria-current="page" {% endif %}>[ {{ tag }} ]</a></h3></header></li>
+{% endfor %}
+</ul>

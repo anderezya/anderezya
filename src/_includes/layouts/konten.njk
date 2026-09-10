@@ -1,0 +1,94 @@
+---
+
+layout: layouts/index.njk
+
+---
+<section data-pagefind-body class="content postingan page">
+  <article>
+ <div style="grid-area: ct; flex-direction: column;" class="postingan flex">
+   <div class="postingan__p">
+   <h1>{{ title }}</h1>
+   {{ page.date | customFormat }} {{modified}}
+   <div class="separator"></div>
+<h3>Navigasi Konten</h3>
+{{ content | toc | safe }}
+      {{ content | safe }}
+   </div>
+    </div>
+  </article>
+{% if tags[0] == "postingan" %}
+{% set previousPost = collections.postingan | getPreviousCollectionItem %}
+{% set nextPost = collections.postingan | getNextCollectionItem %}
+{% else %}
+{% set previousPost = collections.artikel | getPreviousCollectionItem %}
+{% set nextPost = collections.artikel | getNextCollectionItem %}
+{%- endif -%}
+<div style="flex-direction: unset;" class="postingan__nav secondary-container--postingan ">
+<div class="postingan__nav__header secondary-container--styled ">
+<h2>INFORMASI UMUM</h2>
+ <p>
+ <span span data-pagefind-meta="title">
+    <span>JUDUL:</span>
+   {{title}}
+      </span>
+      <span>
+      <span>DESKRIPSI:</span>
+      <span style="max-height: 1.1rem; overflow-y: scroll; color: unset;">{{description}}</span>
+      </span>
+      <span>
+      <span>TANGGAL:</span>
+      {{ page.date | htmlDateString }}
+      </span>
+      </p>
+   </div>
+   <div class="postingan__nav__header secondary-container--styled ">
+   <h2>INFORMASI TEKNIS</h2>
+    <p>
+    <span>
+       <span>LAYOUT:</span>
+      {{layout}}
+         </span>
+         <span>
+         <span>TAGS:</span>
+         {%- for tag in tags -%}
+         {% set tagUrl %}/tags/{{ tag | slugify }}/{% endset %}
+         <a href="{{ tagUrl }}" class="post-tag">{{ tag }}</a>, 
+         {% endfor %}
+         </span>
+         <span>
+         <span>DIREKTORI:</span>
+        {{ page.filePathStem }}
+         </span>
+         </p>
+      </div>
+
+{% if "artikel" not in tags %}
+
+{% set tipe = tags[0] %}
+{% if previousPost %}
+<div class="primary-container--post-nav">
+<div class="secondary-container--post-nav flex">
+<h3>{{ tipe }} Sebelumnya </h3>
+<a class="click tertiary-container container--style" href="{{ previousPost.url }}">
+{{ previousPost.data.title }}
+</a>
+</div>
+{% endif %}
+</div>
+
+{% if nextPost %}
+<div class="primary-container--post-nav">
+<div class="secondary-container--post-nav flex">
+<h3>{{ tipe }} Selanjutnya</h3>
+<a class="click tertiary-container container--style" href="{{ nextPost.url }}">
+{{ nextPost.data.title }}
+</a>
+</div>
+{% endif %}
+
+{% endif %}
+
+</div>
+</div>
+</div>
+</section>
